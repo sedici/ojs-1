@@ -17,4 +17,4 @@ echo "Vamow a ejecutar las queries faltantes"
 mysql -uroot -proot ojs30 < ./postqueries.sql
 echo "ahora vamos con un par de cositas mas de python"
 python ./pdf.py
-echo "terminamos"
+echo "terminamos, gapish"
