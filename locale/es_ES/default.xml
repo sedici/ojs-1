@@ -71,6 +71,7 @@ ________________________________________________________________________</messag
 	<message key="default.groups.name.editor">Editor/a de la revista</message>
 	<message key="default.groups.plural.editor">Editores/as de la revista</message>
 	<message key="default.groups.abbrev.editor">ER</message>
+	<message key="default.groups.abbrev.guestEditor">GE</message>
 	<message key="default.groups.name.guestEditor">Editor/a invitado/a</message>
 	<message key="default.groups.plural.guestEditor">Editores/as invitados/as</message>
 	<message key="default.groups.name.sectionEditor">Editor/a de sección</message>

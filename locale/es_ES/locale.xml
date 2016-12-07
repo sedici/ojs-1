@@ -190,7 +190,7 @@
 	<message key="journal.path">Ruta</message>
 	<message key="context.context">Revista</message>
 	<message key="journal.issn">ISSN</message>
-
+	<message key="journal.viewAllIssues">Ver todos los números</message>
 	<!-- User -->
 	<message key="user.profile.profileImage">Imagen de perfil</message>
 	<message key="user.showAllJournals">Mostrar Mis revistas</message>
@@ -681,6 +681,9 @@
 	<message key="about.submissions">Envíos</message>
 	<message key="about.onlineSubmissions">Envíos en línea</message>
 	<message key="about.onlineSubmissions.login">Ir a Iniciar sesión</message>
+	<message key="about.onlineSubmissions.submissionActions">{$newSubmission} o {$viewSubmissions}.</message>
+	<message key="about.onlineSubmissions.newSubmission">Realizar un nuevo envío</message>
+	<message key="about.onlineSubmissions.viewSubmissions">Ver envíos pendientes</message>
 	<message key="about.onlineSubmissions.registrationRequired">El registro y el inicio de sesión son necesarios para enviar elementos en línea y para comprobar el estado de los envíos recientes. {$login} a una cuenta existente o {$register} una nueva cuenta.</message>
 	<message key="about.authorGuidelines">Directrices para autores/as</message>
 	<message key="about.submissionPreparationChecklist">Lista de comprobación para la preparación de envíos</message>
