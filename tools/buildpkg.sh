@@ -29,7 +29,6 @@ TMPDIR=`mktemp -d $PREFIX.XXXXXX` || exit 1
 EXCLUDE="dbscripts/xml/data/locale/en_US/sample.xml		\
 dbscripts/xml/data/sample.xml					\
 docs/dev							\
-locale/te_ST							\
 tests								\
 tools/buildpkg.sh						\
 tools/genLocaleReport.sh					\
@@ -55,7 +54,9 @@ plugins/generic/recommendBySimilarity				\
 plugins/generic/translator					\
 plugins/importexport/sample					\
 plugins/importexport/duracloud					\
+plugins/importexport/pubmed					\
 plugins/reports/subscriptions					\
+plugins/blocks/relatedItems					\
 tests								\
 lib/pkp/tests							\
 .git								\
