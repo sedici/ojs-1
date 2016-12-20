@@ -1,24 +1,24 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PHP=/usr/bin/php5.6;
+PHP=/usr/bin/php5;
 usuario="root";
 clave="root";
 dbname="ojs30";
 
 cd $DIR
-echo "borramos la base vieja"
+echo "Borrando la base"
 mysqladmin -f drop ojs30 -uroot -proot
-echo "va volvemos a crear"
+echo "Creando la base"
 mysqladmin create ojs30 -uroot -proot
-echo "le encajamos la base 2.4"
+echo "Cargando la base"
 mysql -u$usuario -p$clave $dbname < ./db.sql
-echo "le metemos consultas para que todo ande a al hora de migrar"
+echo "Ejecutando extraqueries.sql"
 mysql -u$usuario -p$clave $dbname < ./extraqueries.sql
-echo "pasamos las tablas a utf8"
+echo "Ejecutando collation.py"
 python ./collation.py
 echo "empieza la migracion!"
 $PHP ../tools/upgrade.php upgrade
-echo "Vamow a ejecutar las queries faltantes"
+echo "Ejecutando postqueries.sql"
 mysql -u$usuario -p$clave $dbname < ./postqueries.sql
-echo "ahora vamos con un par de cositas mas de python"
+echo "Ejecutando pdf.py"
 python ./pdf.py
-echo "terminamos, gapish"
+echo "Fin de la migración"

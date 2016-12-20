@@ -1,0 +1,19 @@
+#Es importante tener instalado php5-curl, composer y python-mysqldb
+# curl -sS https://getcomposer.org/installer
+
+1. git clone https://github.com/sedici/ojs3
+2. cd ojs3/
+3. git submodule update --init --recursive
+4. sudo cp -R /viejo/ojs/public/ /nuevo/ojs3/
+5. sudo cp -R /viejo/ojs/uploads/ /nuevo/ojs3/
+6. sudo cp /viejo/ojs/config.inc.php /nuevo/ojs3/
+7. sudo cp /dir/donde/este/db.sql /nuevo/ojs3/dbreload/
+8. Cambiar la ruta de uploads y la db config.inc.php
+9. cd lib/pkp
+10. php composer.phar update
+11. cd ../../dbreload/
+12. Cambiar las variables de sql y php del archivo reloaddb.sh
+13. bash reloaddb.sh
+
+#Cambiar error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
+#Agregar la función finfo_open a disable_functions en php.ini
