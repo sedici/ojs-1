@@ -16,16 +16,12 @@
 10. cd lib/pkp
 11. php composer.phar update
 12. cd ../../dbreload/
-13. sudo nano collation.py
-13.1. modificar en la linea conn = connect (user="AQUI TU USUARIO", passwd="AQUI TU PASSWORD")
-14. sudo nano pdf.py
-14.1. modificar en la linea conn = connect (user="AQUI TU USUARIO$ , passwd="AQUI TU PASSWORD")
-15. sudo nano reloaddb.sh
-15.1 cambiar los valores de 
+13. sudo nano reloaddb.sh
+13.1 cambiar los valores de 
 	usuario="USUARIO CONEXION BD";
 	clave="PASSWORD CONEXION BD";
-13. Cambiar las variables de sql y php del archivo reloaddb.sh
-14. bash reloaddb.sh
+14. Cambiar las variables de sql y php del archivo reloaddb.sh
+15. bash reloaddb.sh > logMigracion
 
 #Cambiar error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
 #Agregar la función finfo_open a disable_functions en php.ini
