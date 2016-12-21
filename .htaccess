@@ -9,7 +9,7 @@ Options FollowSymLinks
 #REVISTAS PUBLICAS
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(PLR|domus|CADM|raab|RRII-IRI|anales_jursoc|ES|InvJov|dcs|Ingeniar|Economica|Morfol|Habitat|RPSEUNLP|Estrategias|Trayectorias|RevistaInstitucionalFCEUNLP|RITeV)(.*)$ index.php/$1$2 [L]
+    RewriteRule ^(PLR|domus|CADM|raab|RRII-IRI|anales_jursoc|ES|InvJov|dcs|Ingeniar|Economica|Morfol|Habitat|RPSEUNLP|Estrategias|Trayectorias|RevistaInstitucionalFCEUNLP|RITeV|DyH|EPSA|Epistemus)(.*)$ index.php/$1$2 [L]
 
 #REVISTAS INTERNAS O DE PRUEBAS
     RewriteCond %{REQUEST_FILENAME} !-d
