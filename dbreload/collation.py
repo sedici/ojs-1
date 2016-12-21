@@ -3,7 +3,7 @@ import os
 import sys
 
 
-conn = connect(user=sys.argv[1], passwd=sys.argv[2])
+conn = connect(host=sys.argv[4], user=sys.argv[1], passwd=sys.argv[2])
 cur = conn.cursor()
 
 cur.execute("show databases;")
