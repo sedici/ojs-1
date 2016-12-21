@@ -1,0 +1,30 @@
+Options FollowSymLinks
+ 
+ <IfModule mod_rewrite.c>
+    RewriteEngine on
+
+	
+    RewriteRule ^download/(?).pdf$  download$1 [NC,L]
+
+#REVISTAS PUBLICAS
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(PLR|domus|CADM|raab|RRII-IRI|anales_jursoc|ES|InvJov|dcs|Ingeniar|Economica|Morfol|Habitat|RPSEUNLP|Estrategias|Trayectorias|RevistaInstitucionalFCEUNLP|RITeV)(.*)$ index.php/$1$2 [L]
+
+#REVISTAS INTERNAS O DE PRUEBAS
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(taller|oficios|tampas|santiago)(.*)$ index.php/$1$2 [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f 
+    RewriteRule ^help/.$ - [PT]
+    RewriteRule ^help(.*)$ index.php/index/help$1 [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f 
+    RewriteRule ^(.*)$ index.php/index/$1 [QSA,L]
+
+
+
+ </IfModule>
