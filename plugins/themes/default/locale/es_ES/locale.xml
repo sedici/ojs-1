@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * plugins/themes/default/locale/en_US/locale.xml
+  *
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  * Localization information: https://pkp.sfu.ca/wiki/index.php?title=Translating_OxS
+  * Localization strings.
+  -->
+
+<locale name="es_ES" full_name="Español (España)">
+  <message key="plugins.themes.default.name">Tema predeterminado</message>
+  <message key="plugins.themes.default.description"> Este tema implementa el tema por defecto.</message>
+
+  <!-- Theme options -->
+  <message key="plugins.themes.default.option.typography.label">Tipografía</message>
+  <message key="plugins.themes.default.option.typography.description">
+Elija una combinación de fuentes que se adapte a esta revista.</message>
+  <message key="plugins.themes.default.option.typography.notoSans">
+Noto Sans: Fuentes digitales nativa diseñado por Google para un amplio soporte multilingüe.</message>
+  <message key="plugins.themes.default.option.typography.notoSerif">Noto Serif: Un tipo variante de Serif de las fuentes digitales nativas de Google.</message>
+  <message key="plugins.themes.default.option.typography.notoSerif_notoSans"> </message>
+  <message key="plugins.themes.default.option.typography.notoSans_notoSerif"> Noto Serif / Sans Noto: Un emparejamiento complementario con las partidas del trazo de pie y cuerpo de texto de sans serif.</message>
+  <message key="plugins.themes.default.option.typography.lato">Lato: Fuente sans-serif popular y moderna.</message>
+  <message key="plugins.themes.default.option.typography.lora">Lora: Amplio set de serif, buena fuente para la lectura en línea.</message>
+  <message key="plugins.themes.default.option.typography.lora_openSans">Lora/Open Sans: A complimentary pairing with serif headings and sans-serif body text.</message>
+  <message key="plugins.themes.default.option.colour.label">Color</message>
+  <message key="plugins.themes.default.option.colour.description">Elija un color para la cabecera</message>
+</locale>
