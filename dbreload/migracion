@@ -5,11 +5,11 @@
 2. cd ojs3/
 3. git submodule update --init --recursive
 4. sudo cp -R /viejo/ojs/public/ /nuevo/ojs3/
-4.1 sudo chmod 777 -R public
+4.1 sudo chmod *permisos que quieras* -R public
 5. sudo cp -R /viejo/ojs/uploads/ /nuevo/ojs3/
-5.1 sudo chmod 777 -R uploads 
+5.1 sudo chmod *permisos que quieras* -R uploads 
 6. sudo cp /viejo/ojs/config.inc.php /nuevo/ojs3/
-6.1 sudo chmod 777 config.inc.php
+6.1 sudo chmod *permisos que quieras* config.inc.php
 7. sudo cp /viejo/ojs/.htaccess /nuevo/ojs3
 8. sudo cp /dir/donde/este/db.sql /nuevo/ojs3/dbreload/
 9. Cambiar la ruta de uploads y la db config.inc.php
@@ -26,9 +26,9 @@
 
 #Pasos a realizar una vez migrado el sistema
 
-1.Cambiar error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED en php.ini
-2.Agregar la función finfo_open a disable_functions en php.ini
-3.Agregar Analitycs
+1.Realizas las consultas del archivos postqueries.sql --necesita permisos de root.
+2.Cambiar error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED en php.ini
+3.Agregar la función finfo_open a disable_functions en php.ini
 4.Modificar la sección "Acerca de" de cada revista
 5.Modificar la sección de equipo editorial
-6.Cambiar imágenes
+6.Cambiar imágenes --Se encuentran en la carpeta dbreloads/Imagenes
