@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE email_texts SYSTEM "../../../../lib/pkp/dtd/emailTemplateData.dtd">
+<!--
+  * emailTemplateData.xml
+  *
+  * Copyright (c) 2003-2016 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localized email templates XML file.
+  -->
+<email_texts locale="es_ES">
+	<email_text key="LUCENE_ARTICLE_INDEXING_ERROR_NOTIFICATION">
+		<subject>Error de indexación del artículo</subject>
+		<body><![CDATA[Se produjo un error de indexación al actualizar el índice del artículo. <br />
+<br />
+El mensaje de error generado por el servicio web (si lo hay): & quot; {$ error} & quot;
+<br />
+Este correo electrónico fue generado por el plugin de búsqueda Lucene de Open Journal Systems.]]></body>
+		<description>Esta plantilla de correo electrónico se utiliza para notificar al contacto técnico de una revista que se ha producido un error durante la indexación del artículo.</description>
+	</email_text>
+	<email_text key="LUCENE_JOURNAL_INDEXING_ERROR_NOTIFICATION">
+		<subject>Error de indexación de la revista</subject>
+		<body><![CDATA[Se produjo un error de indexación al indexar la publicación & quot; {$ contextName} & quot ;.
+<br />
+El mensaje de error generado por el servicio web (si lo hay): & quot; {$ error} & quot;
+<br />
+Este correo electrónico fue generado por el plugin de búsqueda Lucene de Open Journal Systems.]]></body>
+		<description>Esta plantilla de correo electrónico se utiliza para notificar al contacto técnico de un diario que se ha producido un error durante la indexación del diario.</description>
+	</email_text>
+	<email_text key="LUCENE_SEARCH_SERVICE_ERROR_NOTIFICATION">
+		<subject>Error en el servicio de búsqueda de la revista</subject>
+		<body><![CDATA[Se produjo un error mientras alguien intentaba buscar en la instalación & quot; {$ siteName} & quot ;.
+<br />
+El mensaje de error generado por el servicio web (si lo hay): & quot; {$ error} & quot;
+<br />
+Este correo electrónico fue generado por el plugin de búsqueda Lucene de Open Journal Systems.]]></body>
+		<description>Esta plantilla de correo electrónico se utiliza para notificar al contacto técnico de un diario que se ha producido un error durante la indexación del diario.</description>
+	</email_text>
+</email_texts>

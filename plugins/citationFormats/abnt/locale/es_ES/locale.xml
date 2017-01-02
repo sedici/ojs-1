@@ -16,4 +16,8 @@
 	<message key="plugins.citationFormats.abnt.citationFormatName">ABNT</message>
 	<message key="plugins.citationFormats.abnt.description">Este complemento implementa el formato de citas ABNT.</message>
 	<message key="plugins.citationFormats.abnt.retrieved"><![CDATA[Disponible en: &lt;<a href="{$url}" target="_new">{$url}</a>&gt;. Fecha de acceso: {$retrievedDate}]]></message>
+	<message key="plugins.citationFormats.abnt.manager.settings">Ajustes</message>
+	<message key="plugins.citationFormats.abnt.manager.AbntCitationSettings">Configuración del plugin de formato de citas ABNT</message>
+	<message key="plugins.citationFormats.abnt.manager.settings.description">Ajustes utilizados para la creación de citas acorde a ABNT</message>
+	<message key="plugins.citationFormats.abnt.manager.settings.location">Ubicación</message>
 </locale>
