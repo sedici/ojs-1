@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale/es_ES/locale.xml
+  *
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings.
+  -->
+
+<locale name="es_ES" full_name="Español (España)">
+	<message key="plugins.pubIds.urn.displayName">NRU</message>
+	<message key="plugins.pubIds.urn.description">Este complemento permite la asignación de los Nombres de Recursos Uniformes a los problemas, artículos y galeras en OJS. Este complemento permite la asignación de los Nombres de Recursos Uniformes a los problemas, artículos y galeras en OJS.</message>
+	<message key="plugins.pubIds.urn.manager.settings.description">Por favor, configure el complemento NRU para poder administrar y usar NRUs en OJS:</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnObjects">Contenido de la revista</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnObjectsRequired">Elija los objetos a los que se deben asignar las RNU.</message>
+	<message key="plugins.pubIds.urn.manager.settings.explainURNs">Seleccione los objetos de publicación que tengan asignados los nombres de recursos uniformes (RNU):</message>
+	<message key="plugins.pubIds.urn.manager.settings.enableIssueURN">Tareas</message>
+	<message key="plugins.pubIds.urn.manager.settings.enableSubmissionURN">Artículos</message>
+	<message key="plugins.pubIds.urn.manager.settings.enableRepresentationURN">Galerada</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnPrefix">Prefijo NRU</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnPrefix.description">El prefijo NRU es la corrección, nunca cambia parte de la NRU(por ejemplo, "urn: nbn: de: 0000-").</message>
+	<message key="plugins.pubIds.urn.manager.settings.form.urnPrefixPattern"><![CDATA[El patrón de prefijo RNu debe estar en la forma "urn:&lt;NID&gt;":"&lt;NSS&gt;.]]></message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffix">Sufijo NRU</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffix.description">Un sufijo RNu puede tomar cualquier forma, pero debe ser único entre todos los objetos de publicación con el mismo prefijo RNU asignado:</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffixPattern">Utilice el patrón introducido a continuación para generar sufijos URN. Utilice%j para las iniciales del diario,%v para el número de volumen,%i para el número de publicación,%Y para el año,%a para el ID de artículo de OJS,%g para el ID de galera de OJS, ,%p para el número de página y %x para "Identificador personalizado".</message>
+	<message key="plugins.pubIds.urn.editor.clearIssueObjectsURN.confirm">¿Está seguro de que desea eliminar los objetos de tareas existentes RNUs?</message>
+	<message key="plugins.pubIds.urn.editor.clearIssueObjectsURN.description">Utilice la opción siguiente para borrar RNU de todos los objetos (artículos y galeras) actualmente programados para este problema.</message>
+	<message key="plugins.pubIds.urn.editor.addCheckNo">Agregar número de comprobación</message>
+	<message key="plugins.pubIds.urn.editor.assignURN">Asigne la RNU {$pubId} a este {$pubObjectType}</message>
+	<message key="plugins.pubIds.urn.editor.assignURN.emptySuffix">No se puede asignar la RNU porque falta el sufijo personalizado.</message>
+	<message key="plugins.pubIds.urn.editor.assignURN.pattern">No se puede asignar la RNU {$pubId} porque contiene un patrón no resuelto.</message>
+	<message key="plugins.pubIds.urn.editor.assignURN.assigned">Se ha asignado la RNU {$pubId}.</message>
+	<message key="plugins.pubIds.urn.form.checkNoRequired">Falta el número de comprobación.</message>
+	<message key="plugins.pubIds.urn.editor.urnSuffixCustomIdentifierNotUnique">El sufijo RNU dado ya está en uso para otro elemento publicado. Introduzca un sufijo RNU único para cada elemento.</message>
+	<message key="plugins.pubIds.urn.editor.clearObjectsURN">Limpiar RNU</message>
+	<message key="plugins.pubIds.urn.editor.clearObjectsURN.confirm">¿Está seguro de que desea eliminar la RNU existente?</message>
+	<message key="plugins.pubIds.urn.editor.clearIssueObjectsURN">Limpiar objetos de tareas RNUs</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffixPattern.example">Por ejemplo vol%viss%ipp%p could create the URN suffix "vol3iss2pp230".</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffixPattern.issues">para tareas</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffixPattern.submissions">para artículos</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffixPattern.representations">para galeradas</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnIssueSuffixPatternRequired">Por favor, Introduzca el patrón de sufijo URN para los problemas.</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSubmissionSuffixPatternRequired">Por favor, Introduzca el patrón de sufijo URN para los artículos.</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnRepresentationSuffixPatternRequired">Por favor, Introduzca el patrón de sufijo URN para galeradas</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffixDefault">Utilizar patrones predeterminados.</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffixDefault.description"><![CDATA[%j.v%vi%i for issues<br />%j.v%vi%i.%a for articles<br />%j.v%vi%i.%a.g%g para galeradas]]></message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSuffixCustomIdentifier">Introduzca un sufijo URN individual para cada elemento publicado. Encontrará un campo de entrada URN adicional en la página de metadatos de cada elemento.</message>
+	<message key="plugins.pubIds.urn.manager.settings.checkNo">Chequeo de número</message>
+	<message key="plugins.pubIds.urn.manager.settings.checkNo.label">El número de cheque será automáticamente calculado y agregado al final, como el último dígito de una URN.</message>
+	<message key="plugins.pubIds.urn.manager.settings.namespace">Espacio de nombres</message>
+	<message key="plugins.pubIds.urn.manager.settings.namespace.choose">Elija</message>
+	<message key="plugins.pubIds.urn.manager.settings.namespace.description">El espacio de nombres de identificador persistente suele ser necesario para el registro (por ejemplo, en la Deutsche Nationalbibliothek).</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnResolver">Resolver URL</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnResolver.description">(e.g. http://nbn-resolving.de/)</message>
+	<message key="plugins.pubIds.urn.manager.settings.form.urnResolverRequired">Por favor, Ingrese la URL de la resolución.</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnReassign">Reasignar URNs</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnReassign.description">Si cambia su configuración URN, las URN que ya se han asignado no se verán afectadas. Una vez que se guarda la configuración URN, utilice este botón para borrar todas las URN existentes para que los nuevos ajustes surtan efecto con los objetos existentes.</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnReassign.confirm">¿Está seguro de que desea eliminar todas las URN existentes?</message>
+	<message key="plugins.pubIds.urn.editor.urn">RNU</message>
+	<message key="plugins.pubIds.urn.editor.urnObjectTypeIssue">Tarea</message>
+	<message key="plugins.pubIds.urn.editor.urnObjectTypeSubmission">Artículo</message>
+	<message key="plugins.pubIds.urn.editor.urnObjectTypeRepresentation">Galerada</message>
+	<message key="plugins.pubIds.urn.editor.patternNotResolved">La URN no se puede asignar porque contiene un patrón no resuelto.</message>
+	<message key="plugins.pubIds.urn.editor.canBeAssigned">Lo que ves es una vista previa de la URN. Seleccione la casilla de verificación y guarde el formulario para asignar la URN.</message>
+	<message key="plugins.pubIds.urn.editor.assigned">La URN está asignada a este {$pubObjectType}.</message>
+</locale>

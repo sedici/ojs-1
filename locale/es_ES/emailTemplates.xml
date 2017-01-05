@@ -1048,4 +1048,15 @@ URL del envío: {$submissionUrl}<br />
 {$editorialContactSignature}]]></body>
 		<description>Este correo electrónico se envía de forma automática al editor/a asignado cuando el autor/a carga una versión revisada de un artículo.</description>
 	</email_text>
+	<email_text key="SUBMISSION_ACK_NOT_USER">
+		<subject>Reconocimiento de envío</subject>
+		<body><![CDATA[Hola
+<br />
+{$ SubmitterName} ha enviado el manuscrito, & lt; {$ submissionTitle} & quot; A {$ contextName}. <br />
+<br />
+Si tiene alguna pregunta, por favor póngase en contacto conmigo. Gracias por considerar este portal como un lugar para su trabajo. <br />
+<br />
+{$ EditorialContactSignature}]]></body>
+		<description>Este correo electrónico, cuando está habilitado, se envía automáticamente a los otros autores que no son usuarios dentro de OMP especificados durante el proceso de envío.</description>
+	</email_text>
 </email_texts>

@@ -41,4 +41,8 @@
 {$scriptName} {$pluginName} export [xmlFileName] [journal_path] {issues|articles|galleys} objectId1 [objectId2] ...
 {$scriptName} {$pluginName} register [journal_path] {issues|articles|galleys} objectId1 [objectId2] ...
 ]]></message>
+	<message key="plugins.importexport.medra.settings.form.exportIssuesAs.label">Emite la exportación como</message>
+	<message key="plugins.importexport.medra.settings.form.automaticRegistration.description"><![CDATA[OJS registrará automáticamente las DOI asignadas a mEDRA. Tenga en cuenta que esto puede tomar un corto período de tiempo después de la publicación para procesar. Puede comprobar todas las DOIs no registradas.>]]></message>
+	<message key="plugins.importexport.medra.settings.form.testMode.description">Utilice el API de prueba mEDRA (entorno de pruebas) para el registro DOI. No olvide eliminar esta opción para la producción.</message>
+	<message key="plugins.importexport.medra.senderTask.name">Tarea de registro automático mEDRA</message>
 </locale>

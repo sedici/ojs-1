@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale/es_ES/locale.xml
+  *
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings.
+  -->
+
+<locale name="es_ES" full_name="Español (España)">
+	<message key="plugins.importexport.pubIds.displayName">Plugin Identificadores Públicos XML</message>
+	<message key="plugins.importexport.pubIds.description">Importar y exportar identificadores públicos</message>
+	<message key="plugins.importexport.pubIds.cliUsage">Usage: {$scriptName} {$pluginName} [command] ...
+Commands:
+	import [xmlFileName] [journal_path] [user_name]
+	export [xmlFileName] [journal_path] issues [issueId1] [issueId2] ...
+	export [xmlFileName] [journal_path] issue [issueId]</message>
+	<message key="plugins.importexport.pubIds.export">Exportar identificadores públicos</message>
+	<message key="plugins.importexport.pubIds.export.forIssues">Exportar identificadores públicos</message>
+	<message key="plugins.importexport.pubIds.export.selectIssue">Seleccionar problema</message>
+	<message key="plugins.importexport.pubIds.export.selectIssue.description">Seleccione las tareas para cuyos objetos desea exportar los identificadores públicos.</message>
+	<message key="plugins.importexport.pubIds.import">Importar identificadores públicos</message>
+	<message key="plugins.importexport.pubIds.import.description">Este plugin admite la importación de los identificadores públicos basados ​​en la definición de tipo de documento pubIds.dtd.</message>
+	<message key="plugins.importexport.pubIds.import.results">Importar resultados</message>
+	<message key="plugins.importexport.pubIds.import.errors">Importar errores</message>
+	<message key="plugins.importexport.pubIds.import.errors.description">Se produjeron uno o más errores durante la importación. Compruebe que el formato del archivo de importación coincida correctamente con la especificación. Los detalles específicos de los errores de importación se enumeran a continuación.</message>
+	<message key="plugins.importexport.pubIds.import.success">Importar Éxitos</message>
+	<message key="plugins.importexport.pubIds.import.success.description">Los identificadores públicos importados con éxito se enumeran a continuación.</message>
+	<message key="plugins.importexport.pubIds.cliError">ERROR:</message>
+	<message key="plugins.importexport.pubIds.cliError.unknownJournal">La ruta de diario especificada, "{$journalPath}", no existe.</message>
+	<message key="plugins.importexport.pubIds.cliError.unknownUser">El usuario especificado, "{$userName}", no existe.</message>
+	<message key="plugins.importexport.pubIds.cliError.issueNotFound">Ningún emisor coincidía con el ID de problema especificado "{$issueId}".</message>
+	<message key="plugins.importexport.pubIds.cliError.couldNotWrite">No se pudo escribir en el archivo "{$fileName}".</message>
+	<message key="plugins.importexport.pubIds.import.error.uploadFailed">Error en la carga. Asegúrese de que las subidas se permiten en su servidor y que el archivo no es demasiado grande para su configuración de PHP y servidor web.</message>
+	<message key="plugins.importexport.pubIds.import.error.unsupportedRoot">Este plugin no admite el nodo raíz suministrado "{$rootName}". Asegúrese de que el archivo esté correctamente formado y vuelva a intentarlo.</message>
+	<message key="plugins.importexport.pubIds.import.error.unknownObjectType">Se especificó un tipo de objeto desconocido "{$pubObjectType}" en el atributo "pubObjectType" del elemento con el valor "{$pubId}".</message>
+	<message key="plugins.importexport.pubIds.import.error.unknownObject">El objeto "{$pubObjectType}" con ID = {$pubObjectId} especificado en el elemento con el valor "{$pubId}" no existe para esta revista.</message>
+	<message key="plugins.importexport.pubIds.import.error.pubIdExists">Ya existe un identificador público del tipo "{$pubIdType}" para el objeto {$pubObjectType} con ID = {$pubObjectId}.</message>
+	<message key="plugins.importexport.pubIds.import.error.duplicatePubId">El identificador público "{$pubId}" ya está en uso por otro objeto.</message>
+	<message key="plugins.importexport.pubIds.import.error.unknownPubId">Su archivo de importación contiene un tipo de identificador público "{$pubIdType}" que ningún plugin pubId puede manejar. Instale y / o active el plugin pubId correspondiente antes de intentar importar este dataset.</message>
+</locale>

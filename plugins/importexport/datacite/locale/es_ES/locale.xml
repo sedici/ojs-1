@@ -25,4 +25,8 @@
 {$scriptName} {$pluginName} export [outputFileName] [journal_path] {issues|articles|galleys} objectId1 [objectId2] ...
 {$scriptName} {$pluginName} register [journal_path] {issues|articles|galleys} objectId1 [objectId2] ...
 ]]></message>
+	<message key="plugins.importexport.datacite.settings.description">Configure el plugin de exportación de DataCite antes de usarlo por primera vez.</message>
+	<message key="plugins.importexport.datacite.settings.form.automaticRegistration.description">OJS depositará DOIs automáticamente en DataCite. Tenga en cuenta que esto puede tomar un corto período de tiempo después de la publicación para procesar. Puede verificar todas las DOIs no registradas.</message>
+	<message key="plugins.importexport.datacite.settings.form.testMode.description">Utilice el prefijo de prueba DataCite para el registro DOI. No olvide eliminar esta opción para la producción.</message>
+	<message key="plugins.importexport.datacite.senderTask.name">Tarea de registro automático de DataCite</message>
 </locale>

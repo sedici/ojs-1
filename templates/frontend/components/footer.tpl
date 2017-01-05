@@ -1,18 +1,67 @@
+{**
+ * templates/frontend/components/footer.tpl
+ *
+ * Copyright (c) 2014-2016 Simon Fraser University Library
+ * Copyright (c) 2003-2016 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief Common site frontend footer.
+ *
+ * @uses $isFullWidth bool Should this page be displayed without sidebars? This
+ *       represents a page-level override, and doesn't indicate whether or not
+ *       sidebars have been configured for thesite.
+ *}
 
-<div id="footer">
-<p>
-Todos los derechos reservados &copy; 2008 - {$smarty.now|date_format:"%Y"} <a href="http://www.unlp.edu.ar" target="_blank">Universidad Nacional de La Plata</a> <br> Powered by <a href="http://pkp.sfu.ca/?q=ojs" target="_blank">Open Journal Systems</a> and <a href="http://www.prebi.unlp.edu.ar"> Proyecto de Enlace de Bibliotecas </a> - <a href="http://sedici.unlp.edu.ar" target="_blank">Servicio de Difusión de la Creación Intelectual</a>
-</p>
+	</div><!-- pkp_structure_main -->
+
+	{* Sidebars *}
+	{if empty($isFullWidth)}
+		{call_hook|assign:"sidebarCode" name="Templates::Common::Sidebar"}
+		{if $sidebarCode}
+			<div class="pkp_structure_sidebar left" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
+				{$sidebarCode}
+			</div><!-- pkp_sidebar.left -->
+		{/if}
+	{/if}
+</div><!-- pkp_structure_content -->
+
+<div id="pkp_content_footer" class="pkp_structure_footer_wrapper" role="contentinfo">
+
+	<div class="pkp_structure_footer">
+
+		{if $pageFooter}
+			<div class="pkp_footer_content">
+				{$pageFooter}
+			</div>
+		{/if}
+
+		<div class="pkp_brand_footer" role="complementary" aria-label="{translate|escape key="about.aboutThisPublishingSystem"}">
+			<a href="{url page="about" op="aboutThisPublishingSystem"}">
+				<img alt="{translate key=$packageKey}" src="{$baseUrl}/{$brandImage}">
+			</a>
+			<a href="{$pkpLink}">
+				<img alt="{translate key="common.publicKnowledgeProject"}" src="{$baseUrl}/lib/pkp/templates/images/pkp_brand.png">
+			</a>
+		</div>
+	</div>
+
+</div><!-- pkp_structure_footer_wrapper -->
+
+</div><!-- pkp_structure_page -->
 {literal}
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-15165518-12']);
-_gaq.push(['_trackPageview']);
-( function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-15165518-12', 'auto');
+  ga('send', 'pageview');
+
 </script>
 {/literal}
-</div><!-- footer -->
+{load_script context="frontend" scripts=$scripts}
+
+{call_hook name="Templates::Common::Footer::PageFooter"}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale/es_ES/locale.xml
+  *
+  * Copyright (c) 2014-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings.
+  -->
+
+<locale name="es_ES" full_name="Español (España)">
+	<message key="plugins.generic.openAIRE.displayName">OpenAIRE</message>
+	<message key="plugins.generic.openAIRE.description">El plugin OpenAIRE añade el elemento projectID a los metadatos del artículo y extiende la interfaz OAI-PMH de acuerdo con las Directrices OpenAIRE 1.1, ayudando a las revistas de OJS a ser compatibles con OpenAIRE.</message>
+	<message key="plugins.generic.openAIRE.projectID">OpenAIRE ProjectID</message>
+	<message key="plugins.generic.openAIRE.projectID.description"><![CDATA[Si esta investigación resulta de una iniciativa de la UE que cumple con la <a href="https://www.openaire.eu/" target="_blank"> plataforma de metadatos OpenAIRE </a>, incluya el ProjectID, Que corresponde con el identificador del Acuerdo de subvención.]]></message>
+	<message key="plugins.generic.openAIRE.projectIDValid">Por favor, introduzca un proyectID válido (6 números)</message>
+</locale>
