@@ -4,8 +4,8 @@
 <!--
   * locale/es_ES/manager.xml
   *
-  * Copyright (c) 2013-2017 Simon Fraser University
-  * Copyright (c) 2003-2017 John Willinsky
+  * Copyright (c) 2013-2016 Simon Fraser University Library
+  * Copyright (c) 2003-2016 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   * https://pkp.sfu.ca/wiki/index.php?title=OJS:_Spanish_(es_ES)
   * Localization strings.
@@ -95,6 +95,7 @@
 	<message key="manager.sections.form.mustAllowPermission">Asegúrese de que hay, al menos, una casilla de verificación seleccionada para cada tarea del editor/a de sección.</message>
 	<message key="manager.sections.form.reviewFormId">Asegúrese de que ha elegido un formulario de revisión válido.</message>
 	<message key="manager.sections.form.titleRequired">Especifique un título para la sección.</message>
+	<message key="manager.sections.hideAbout">Omitir esta sección en el apartado Acerca de la revista.</message>
 	<message key="manager.sections.hideTocAuthor">Omitir los nombres de los autores/as en los elementos de sección de la tabla de contenidos de la publicación.</message>
 	<message key="manager.sections.hideTocTitle">Omitir el título de esta sección en la tabla de contenidos de la publicación.</message>
 	<message key="manager.sections.identifyType">Identificar los elementos publicados en esta sección como</message>
@@ -158,7 +159,11 @@
 	<message key="manager.setup.enableAnnouncements">Permitir que los gestores/as de la revista publiquen avisos.</message>
 	<message key="manager.setup.enableAnnouncementsHomepage1">Mostrar</message>
 	<message key="manager.setup.enableAnnouncementsHomepage2">los últimos avisos publicados en la página inicial.</message>
+	<message key="manager.setup.enablePageNumber">Se calcularán e introducirán los números de página manualmente en la tabla de contenidos (p. ej., pág. 13-26).</message>
+	<message key="manager.setup.enablePublicArticleId">Se usarán identificadores personalizados para identificar los elementos publicados.</message>
+	<message key="manager.setup.enablePublicGalleyId">Se usarán identificadores personalizados para identificar las galeradas (p. ej., archivos HTML o PDF) de los elementos publicados.</message>
 	<message key="manager.setup.enablePublicIssueId">Se usarán identificadores personalizados para identificar las publicaciones.</message>
+	<message key="manager.setup.enablePublicSuppFileId">Se usarán identificadores personalizados para identificar los archivos artículos suplementarios.</message>
 	<message key="manager.setup.enableUserRegistration">Los usuarios/as pueden registrarse en la revista con uno o varios de los siguientes roles:</message>
 	<message key="manager.setup.focusAndScope">Objeto y alcance</message>
 	<message key="manager.setup.forAuthorsToIndexTheirWork">Instrucciones de indexación para los autores/as</message>
@@ -429,7 +434,7 @@
 	<message key="manager.subscriptions.form.domainIPRangeRequired">El tipo de suscripción seleccionada requiere un dominio o un rango de IP para validar la suscripción.</message>
 	<message key="manager.subscriptions.form.domainValid">Introduzca un dominio válido.</message>
 	<message key="manager.subscriptions.form.ipRange">Rangos de IP</message>
-	<message key="manager.subscriptions.form.ipRangeItem"><![CDATA[•]]></message>
+	<message key="manager.subscriptions.form.ipRangeItem">•</message>
 	<message key="manager.subscriptions.form.ipRangeInstructions"><![CDATA[Si se introducen rangos de IP aquí, el dominio es opcional.<br />Los valores válidos incluyen una dirección IP (p. ej., 142.58.103.1), un rango IP (p. ej., 142.58.103.1 - 142.58.103.4), un rango IP con carácter comodín '*' (p. ej., 142.58.*.*) y rango IP con CIDR (p. ej., 142.58.100.0/24).]]></message>
 	<message key="manager.subscriptions.form.ipRangeValid">Introduzca un rango de IP válido.</message>
 	<message key="manager.subscriptions.form.deleteIpRange">Eliminar</message>
@@ -582,4 +587,13 @@
 	<message key="plugins.importexport.common.export.error.outputFileNotWritable">El archivo de salida {$param} no es editable.</message>
 	<message key="plugins.importexport.common.register.error.mdsError">¡El registro ha fallado! El servidor de registro del DOI ha comunicado un error: '{$param}'.</message>
 	<message key="plugins.importexport.common.register.success">¡Registro correcto!</message>
+	<message key="plugins.importexport.common.error.noDOIContentObjects">Ningún objeto de publicación se selecciona para la asignación DOI en el plugin de identificador público DOI, por lo que no hay posibilidad de depósito o exportación en este complemento.</message>
+	<message key="plugins.importexport.common.status.registered">Registrado</message>
+	<message key="plugins.importexport.common.invalidXML">XML inválido:</message>
+	<message key="plugins.importexport.common.senderTask.warning.noDOIprefix">El prefijo DOI falta para la revista con la ruta de acceso {$path}.</message>
+	<message key="plugins.importexport.common.cliError">ERROR:</message>
+	<message key="plugins.importexport.common.error.unknownJournal">La ruta de la revista especificada, "{$journalPath}", no existe.</message>
+	<message key="plugins.importexport.common.error.unknownObjects">No se pudieron encontrar los objetos especificados.</message>
+	<message key="manager.setup.notifications.copyPrimaryContact">Envíe una copia al contacto principal, identificado en la configuración del diario.</message>
+	<message key="plugins.importexport.common.export.representations">Galerada</message>
 </locale>
