@@ -3,8 +3,8 @@
 /**
  * @file plugins/importexport/doaj/filter/DOAJXmlFilter.inc.php
  *
- * Copyright (c) 2014-2016 Simon Fraser University Library
- * Copyright (c) 2000-2016 John Willinsky
+ * Copyright (c) 2014-2017 Simon Fraser University
+ * Copyright (c) 2000-2017 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class DOAJXmlFilter
@@ -101,15 +101,11 @@ class DOAJXmlFilter extends NativeExportFilter {
 			 * "page numbers" are; for example, some journals (eg. JMIR)
 			 * use the "e-location ID" as the "page numbers" in PubMed
 			 */
-			$pages = $pubObject->getPages();
-			if (preg_match("/([0-9]+)\s*-\s*([0-9]+)/i", $pages, $matches)) {
-				// simple pagination (eg. "pp. 3-8")
-				$recordNode->appendChild($node = $doc->createElement('startPage', htmlspecialchars($matches[1], ENT_COMPAT, 'UTF-8')));
-				$recordNode->appendChild($node = $doc->createElement('endPage', htmlspecialchars($matches[2], ENT_COMPAT, 'UTF-8')));
-			} elseif (preg_match("/(e[0-9]+)/i", $pages, $matches)) {
-				// elocation-id (eg. "e12")
-				$recordNode->appendChild($node = $doc->createElement('startPage', htmlspecialchars($matches[1], ENT_COMPAT, 'UTF-8')));
-				$recordNode->appendChild($node = $doc->createElement('endPage', htmlspecialchars($matches[1], ENT_COMPAT, 'UTF-8')));
+			$startPage = $pubObject->getStartingPage();
+			$endPage = $pubObject->getEndingPage();
+			if (isset($startPage) && $startPage !== "") {
+				$recordNode->appendChild($node = $doc->createElement('startPage', htmlspecialchars($startPage, ENT_COMPAT, 'UTF-8')));
+				$recordNode->appendChild($node = $doc->createElement('endPage', htmlspecialchars($endPage, ENT_COMPAT, 'UTF-8')));
 			}
 			// DOI
 			$doi = $pubObject->getStoredPubId('doi');
@@ -120,7 +116,13 @@ class DOAJXmlFilter extends NativeExportFilter {
 			$type = $pubObject->getType($pubObject->getLocale());
 			if (!empty($type)) $recordNode->appendChild($node = $doc->createElement('documentType', htmlspecialchars($type, ENT_COMPAT, 'UTF-8')));
 			// Article title
-			foreach ((array) $pubObject->getTitle(null) as $locale => $title) {
+			$articleTitles = (array) $pubObject->getTitle(null);
+			if (array_key_exists($pubObject->getLocale(), $articleTitles)) {
+				$titleInArticleLocale = $articleTitles[$pubObject->getLocale()];
+				unset($articleTitles[$pubObject->getLocale()]);
+				$articleTitles = array_merge(array($pubObject->getLocale() => $titleInArticleLocale), $articleTitles);
+			}
+			foreach ($articleTitles as $locale => $title) {
 				if (!empty($title)) {
 					$recordNode->appendChild($node = $doc->createElement('title', htmlspecialchars($title, ENT_COMPAT, 'UTF-8')));
 					$node->setAttribute('language', AppLocale::get3LetterIsoFromLocale($locale));
@@ -142,7 +144,13 @@ class DOAJXmlFilter extends NativeExportFilter {
 				}
 			}
 			// Abstract
-			foreach ((array) $pubObject->getAbstract(null) as $locale => $abstract) {
+			$articleAbstracts = (array) $pubObject->getAbstract(null);
+			if (array_key_exists($pubObject->getLocale(), $articleAbstracts)) {
+				$abstractInArticleLocale = $articleAbstracts[$pubObject->getLocale()];
+				unset($articleAbstracts[$pubObject->getLocale()]);
+				$articleAbstracts = array_merge(array($pubObject->getLocale() => $abstractInArticleLocale), $articleAbstracts);
+			}
+			foreach ($articleAbstracts as $locale => $abstract) {
 				if (!empty($abstract)) {
 					$recordNode->appendChild($node = $doc->createElement('abstract', htmlspecialchars(PKPString::html2text($abstract), ENT_COMPAT, 'UTF-8')));
 					$node->setAttribute('language', AppLocale::get3LetterIsoFromLocale($locale));
@@ -152,11 +160,21 @@ class DOAJXmlFilter extends NativeExportFilter {
 			$recordNode->appendChild($node = $doc->createElement('fullTextUrl', htmlspecialchars(Request::url(null, 'article', 'view', $pubObject->getId()), ENT_COMPAT, 'UTF-8')));
 			$node->setAttribute('format', 'html');
 			// Keywords
-			$keywordsNode = $doc->createElement('keywords');
-			$recordNode->appendChild($keywordsNode);
-			$subjects = array_map('trim', explode(';', $pubObject->getSubject($pubObject->getLocale())));
-			foreach ($subjects as $keyword) {
-				if (!empty($keyword)) $keywordsNode->appendChild($node = $doc->createElement('keyword', htmlspecialchars($keyword, ENT_COMPAT, 'UTF-8')));
+			$supportedLocales = array_keys(AppLocale::getSupportedFormLocales());
+			$dao = DAORegistry::getDAO('SubmissionKeywordDAO');
+			$articleKeywords = $dao->getKeywords($pubObject->getId(), $supportedLocales);
+			if (array_key_exists($pubObject->getLocale(), $articleKeywords)) {
+				$keywordsInArticleLocale = $articleKeywords[$pubObject->getLocale()];
+				unset($articleKeywords[$pubObject->getLocale()]);
+				$articleKeywords = array_merge(array($pubObject->getLocale() => $keywordsInArticleLocale), $articleKeywords);
+			}
+			foreach ($articleKeywords as $locale => $keywords) {
+				$keywordsNode = $doc->createElement('keywords');
+				$keywordsNode->setAttribute('language', AppLocale::get3LetterIsoFromLocale($locale));
+				$recordNode->appendChild($keywordsNode);
+				foreach ($keywords as $keyword) {
+					if (!empty($keyword)) $keywordsNode->appendChild($node = $doc->createElement('keyword', htmlspecialchars($keyword, ENT_COMPAT, 'UTF-8')));
+				}
 			}
 		}
 		return $doc;

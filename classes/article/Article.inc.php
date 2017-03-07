@@ -9,8 +9,8 @@
 /**
  * @file classes/article/Article.inc.php
  *
- * Copyright (c) 2014-2016 Simon Fraser University Library
- * Copyright (c) 2003-2016 John Willinsky
+ * Copyright (c) 2014-2017 Simon Fraser University
+ * Copyright (c) 2003-2017 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * @class Article
@@ -225,24 +225,6 @@ class Article extends Submission {
 	 */
 	function setFastTracked($fastTracked) {
 		return $this->setData('fastTracked',$fastTracked);
-	}
-
-	/**
-	 * Get starting page of an article.
-	 * @return int
-	 */
-	function getStartingPage() {
-		preg_match('/^[^\d]*(\d+)\D*(.*)$/', $this->getPages(), $pages);
-		return $pages[1];
-	}
-
-	/**
-	 * Get ending page of an article.
-	 * @return int
-	 */
-	function getEndingPage() {
-		preg_match('/^[^\d]*(\d+)\D*(.*)$/', $this->getPages(), $pages);
-		return $pages[2];
 	}
 
 	/**
