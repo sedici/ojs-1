@@ -1,30 +1,33 @@
+#
+# Importante: Deben estar declaradas las variables PATH y JOURNAL
+# dentro del servidor Apache y debe existir un archivo llamado new404.html
+# en la carpeta raíz de OJS
+#
+
 Options FollowSymLinks
  
  <IfModule mod_rewrite.c>
-    RewriteEngine on
-
-	
+  
+    RewriteEngine on	
     RewriteRule ^download/(?).pdf$  download$1 [NC,L]
 
-#REVISTAS PUBLICAS
+    #INDEX
+    RewriteRule ^\$\$\$call\$\$\$/page/page/(.+)$ index.php/index/$$$call$$$/page/page/$1 [L]
+
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(PLR|domus|CADM|raab|RRII-IRI|anales_jursoc|ES|InvJov|dcs|Ingeniar|Economica|Morfol|Habitat|RPSEUNLP|Estrategias|Trayectorias|RevistaInstitucionalFCEUNLP|RITeV|DyH|EPSA|Epistemus|ReDeA)(.*)$ index.php/$1$2 [L]
+    RewriteRule ^(${PATH})(.*)$ index.php/index/$1$2 [L]
 
-#REVISTAS INTERNAS O DE PRUEBAS
+    RewriteRule ^\$\$\$call\$\$\$/(tab|grid)(.+) index.php/index/$$$call$$$/$1$2 [L]
+
+    #REVISTAS PUBLICAS 
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(taller|oficios|tampas|santiago)(.*)$ index.php/$1$2 [L]
-
+    RewriteRule ^(${JOURNAL})(.*)$ index.php/$1$2 [L]
+	
+    #ERROR 404
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f 
-    RewriteRule ^help/.$ - [PT]
-    RewriteRule ^help(.*)$ index.php/index/help$1 [L]
-
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f 
-    RewriteRule ^(.*)$ index.php/index/$1 [QSA,L]
-
-
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule !^(${JOURNAL}|${PATH})(.*)$ /new404.html [L]
 
  </IfModule>
