@@ -1,5 +1,5 @@
 #
-# Importante: Deben estar declaradas las variables PATH y JOURNAL
+# Importante: Deben estar declaradas las variables OJSPATH y JOURNAL
 # dentro del servidor Apache y debe existir un archivo llamado new404.html
 # en la carpeta raíz de OJS
 #
@@ -16,7 +16,7 @@ Options FollowSymLinks
 
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(${PATH})(.*)$ index.php/index/$1$2 [L]
+    RewriteRule ^(${OJSPATH})(.*)$ index.php/index/$1$2 [L]
 
     RewriteRule ^\$\$\$call\$\$\$/(tab|grid)(.+) index.php/index/$$$call$$$/$1$2 [L]
 
@@ -28,6 +28,6 @@ Options FollowSymLinks
     #ERROR 404
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule !^(${JOURNAL}|${PATH})(.*)$ /new404.html [L]
+    RewriteRule !^(${JOURNAL}|${OJSPATH})(.*)$ /new404.html [L]
 
  </IfModule>
