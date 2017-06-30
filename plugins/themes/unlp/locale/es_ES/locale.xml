@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<locale name="es_ES" full_name="Español (España)">
+    <message key="plugins.themes.unlpBootstrap.name">Tema Bootstrap Unlp</message>
+    <message key="plugins.themes.unlpBootstrap.description">Tema de Bootstrap Unlp</message>
+    <message key="plugins.themes.unlpBootstrap.siteTitle">REVISTAS</message>
+    <message key="plugins.themes.unlpBootstrap.Issn">Issn:</message>
+    <message key="plugins.themes.unlpBootstrap.Eissn">e-Issn:</message>
+    <message key="plugins.themes.unlpBootstrap.contact">Contacto principal:</message>
+</locale>

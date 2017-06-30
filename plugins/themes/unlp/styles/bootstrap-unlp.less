@@ -1,0 +1,343 @@
+/**
+ * @file plugins/themes/bootstrap3/index.less
+ *
+ * Copyright (c) 2014-2017 Simon Fraser University Library
+ * Copyright (c) 2003-2017 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief Bootstrap 3 theme stylesheet. This is the base styles that must be
+ *   included for any theme.
+ *
+ */
+
+@import "../bootstrap/less/bootstrap.less";
+@media only screen and (max-width: 500px){
+  .description{
+    display: none;
+  }
+
+  .media-heading{
+    font-size: 14px !important;
+  }
+
+  body{
+    font-size: 10px !important;
+  }
+}
+.page_index_site{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.about_site{
+  background-image: url('/plugins/themes/unlp/templates/images/image_aorgh.png');
+  padding: 5%;
+  color: white;
+  text-align: center;
+}
+
+.about_site p{
+  color: white;
+  text-align: center;
+}
+
+.pkp_structure_main{
+  padding-left: 0 !important;
+}
+
+.description{
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.description ul{
+  padding-top: 2%;
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.unlp-img{
+  margin-left: 30px !important;
+}
+
+.img-nav{
+  padding-left: 9px;
+}
+
+.container{
+  margin-left: 0;
+}
+
+.journal-content{
+  min-height: 200px;
+}
+
+.journal-img{
+  box-shadow: 10px 10px 1px grey;
+}
+
+.journal-buttons{
+  margin-top: 7%;
+}
+
+
+.media-body p{
+  text-align: justify;
+}
+
+.media-body{
+  padding-left: 5%;
+}
+
+.media-heading a{
+  color: black;
+  text-decoration: none;
+}
+
+.journal-current{
+  background-color: #ffc264;
+  border-color: #cf8d08;
+}
+
+.journal-current a{
+  color: white;
+  font-family: "Bitter", Georgia, "Times New Roman", Times, serif;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #cf7b00 !important;
+  }
+}
+
+.journal-view a{
+  color: black;;
+  font-family: "Bitter", Georgia, "Times New Roman", Times, serif;
+}
+
+.page-title{
+  color:#ffc264;
+}
+
+.title{
+  margin: 0;
+}
+
+.footer-logo img{
+  height: 130px;
+  width: auto;
+}
+
+// Collapse margins on the site name in the header
+.navbar-header .site-name {
+  margin: 0;
+}
+.navbar-brand{
+  height: 130px;
+}
+// Resize the logo in the header
+.navbar-brand-logo img {
+  max-height: 100%;
+  width: auto;
+}
+
+// Set color of links in navbar
+.navbar-default .nav > li > a {
+  color: @navbar-default-link-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: @navbar-default-link-hover-color;
+    background: @navbar-default-link-hover-bg;
+  }
+
+  &:disabled {
+    color: @navbar-default-link-disabled-color;
+    background: @navbar-default-link-disabled-bg;
+  }
+}
+
+// Page header subtitles
+.page-header small {
+  display: block;
+  margin-top: 0.5em;
+}
+
+// Wrap homepage journal description and additional content in margins
+.pkp_page_index .journal-description,
+.pkp_page_index .additional_content {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+// Cap the height of an issue thumbnail image
+.issue-toc {
+
+  img {
+    max-height: 25em;
+  }
+}
+
+.article-details {
+
+  // Add space below authors on article page
+  .authors {
+    margin-bottom: 2em;
+  }
+
+  .galley-link {
+    margin: 0.5em 0;
+    display: block;
+    &:extend(.btn-primary all);
+  }
+
+
+  // Add space between citation output and list of citation formats
+  .citation_output {
+    margin-bottom: @panel-body-padding;
+    word-wrap: break-word;
+  }
+}
+
+.article-sidebar {
+
+  // Ensure doi link doesn't extend beyond container
+  .doi {
+    word-wrap: break-word;
+  }
+}
+
+// Because we want to float the search right when the header is not collapsed
+// Why you no give us pull-md-right bootstrap?
+.pull-md-right {
+
+  @media(min-width: @screen-md) {
+    float: right;
+  }
+}
+
+// Override <h*> styles in media headings so that we can preserve accessible
+// heading structure without distorting the media style
+.media-heading h1,
+.media-heading h2,
+.media-heading h3,
+.media-heading h4,
+.media-heading h5,
+.media-heading h6,
+h1.media-heading,
+h2.media-heading,
+h3.media-heading,
+h4.media-heading,
+h5.media-heading,
+h6.media-heading {
+  font-size: @font-size-large; // Bootstrap variable
+}
+
+// Adjust lead text in media headings relative to the <h*> styles above
+.media .lead {
+  font-size: @font-size-base; // Bootstrap variable
+}
+
+// Media elements need a little bit more spacing in almost all themes
+.media {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+// Set a max size for media list thumbnails
+.media-left img {
+  max-width: 128px;
+}
+
+// Apply .panel and .list-group styling to  block output with lists
+.pkp_block {
+  &:extend(.panel);
+  &:extend(.panel-default);
+
+  .title {
+    &:extend(.panel-heading);
+    &:extend(.panel-default > .panel-heading);
+    display: block;
+  }
+
+  ul {
+    &:extend(.list-group);
+    &:extend(.panel > .list-group);
+
+    li {
+      &:extend(.list-group-item);
+      &:extend(.panel > .list-group .list-group-item);
+    }
+  }
+}
+
+// Apply .btn styles to makeSubmission block plugin
+.pkp_block.block_make_submission {
+
+  a {
+    &:extend(.btn);
+    &:extend(.btn-default);
+  }
+}
+
+// Style the footer
+footer[role="contentinfo"] {
+  background: @gray-lighter; // bootstrap variable
+  padding: 2em;
+  margin-top: 4em;
+}
+
+// Style the PDF and HTML view
+.header_view {
+  z-index: 2;
+  background: @navbar-default-bg;
+  &:extend(.navbar all);
+  &:extend(.navbar-default all);
+
+  a {
+    display: inline-block;
+    padding: @navbar-padding-vertical @navbar-padding-horizontal;
+    color: @navbar-default-link-color;
+
+    &:hover,
+    &:focus {
+      color: @navbar-default-link-hover-color;
+      background: @navbar-default-link-hover-bg;
+    }
+
+    &:active {
+      color: @navbar-default-link-active-color;
+      background: @navbar-default-link-active-bg;
+    }
+
+    &:disabled {
+      color: @navbar-default-link-disabled-color;
+      background: @navbar-default-link-disabled-bg;
+    }
+  }
+
+  .return,
+  .download .label {
+    &:extend(.sr-only all);
+  }
+
+  .download {
+    &:extend(.pull-right all);
+  }
+}
+
+#pdfCanvasContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: hidden;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    padding-top: @navbar-height;
+    border: none;
+  }
+}
